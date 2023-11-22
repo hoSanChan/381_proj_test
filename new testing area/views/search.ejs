@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <style>
+        body {
+            font-family: 'Monoid', monospace;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        .jumbotron {
+            background-color: #222;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .jumbotron h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        form {
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        form input[type="text"],
+        form textarea {
+            width: 100%;
+            padding: 5px;
+            border-radius: 3px;
+            border: none;
+            background-color: #555;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        form input[type="submit"] {
+            background-color: #777;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #999;
+        }
+
+        small {
+            font-size: 12px;
+            color: #ccc;
+        }
+        a {
+            color: #ff9900;
+            text-decoration: none;
+            background-color: #333;
+            padding: 5px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+
+<body>
+	
+<div class="jumbotron text-center">
+
+    <h1>Search</h1>
+
+    </div>
+	
+    <form action="/search" method="POST">
+
+    <label for="isbn"><b>Please type in ISBN:</b></label>
+    <br>
+
+    <input type="text" id="isbn" name="isbn" placeholder="Type the ISBN" pattern="[0-9]{13}">
+    <br>
+
+    <small>Numbers only in 13 digits (For example: 1234567890123)</small>
+    <br>
+	
+    <input type="submit" value="Search" />
+	
+    <p><a href='/home'>Back To Home</a></p>
+
+</body>
+
+</html>
+

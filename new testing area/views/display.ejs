@@ -1,0 +1,66 @@
+<html>
+  
+<head>
+    <style>
+        body {
+            font-family: "Monoid", monospace;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h2 {
+            margin: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        ul {
+            margin: 20px;
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        
+        a {
+            color: #ff9900;
+            text-decoration: none;
+            background-color: #333;
+            padding: 5px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        
+        a:hover {
+            background-color: #444;
+        }
+        table.center {
+            margin-left: auto; 
+            margin-right: auto;
+        }
+    </style>
+</head>
+  <body>
+  
+   
+   <H2>There are <%= nItems %> book(s). </H2>
+   <table class="center">
+    <tr><th>ISBN</th><th>Book Title</th></tr>
+      
+  <ul>
+ <% for (var i of items) { %>
+ <tr><td><a href="/details?_id=<%= i._id %>"><%= i.isbn %></a></td><td ALIGN=CENTER><a href="/details?_id=<%= i._id %>"><%= i.bookname %></a></td></tr> 
+ <% } %>
+ </ul>
+  </table>   
+  <p style="text-align:center;"><a href="/home">Back To Home</a></p>
+
+  
+ </body>
+
+</html>

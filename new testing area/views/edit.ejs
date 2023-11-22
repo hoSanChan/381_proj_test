@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+            font-family: 'Monoid', monospace;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        .jumbotron {
+            background-color: #222;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .jumbotron h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        form {
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 20px;
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        form input[type="text"],
+        form textarea {
+            width: 100%;
+            padding: 5px;
+            border-radius: 3px;
+            border: none;
+            background-color: #555;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        form input[type="submit"] {
+            background-color: #777;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #999;
+        }
+
+        small {
+            font-size: 12px;
+            color: #ccc;
+        }
+</style>
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Update Details</h1>
+    </div>
+    <form action="/update" method="POST">
+
+    <label for="isbn" value="item.isbn"><b>ISBN: <%= item.isbn %></b></label><br><br>
+    
+    <input type="hidden" id="postId" name="postId" value="<%= item.isbn %>" />
+     
+    <label for="bookname"><b>Book Title*:</b></label>
+    <input type="text" id="bookname" name="bookname" class="form-control" placeholder="" value= "<% if (item.bookname) { %><%= item.bookname %><% } %>" /><br><br>
+                
+    <label for="category"><b>Category:</b></label>
+    <input type="text" id="category" name="category" class="form-control" placeholder="" value ="<% if (item.category) { %><%= item.category %><% } %>" /><br><br>
+
+    <label for="publisher"><b>Publisher:</b></label>
+    <input type="text" id="publisher" name="publisher" class="form-control" placeholder="" value ="<% if (item.publisher) { %><%= item.publisher %><% } %>" /><br><br>
+                
+    <label for="author"><b>Author:</b></label>
+    <input type="text" id="author" name="author" class="form-control" placeholder="" value = "<% if (item.author) { %><%= item.author %><% } %>" /><br><br>
+                
+    <label for="remark"><b>Remark:</b></label><br>
+    <textarea name="remark" cols="50" rows="10" placeholder="" value = "<% if (item.remark) { %><%= item.remark %><% } %>" /></textarea><br>
+
+    <input type="submit" value="Update">
+</html>
+
